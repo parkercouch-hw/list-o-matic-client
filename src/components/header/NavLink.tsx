@@ -9,7 +9,7 @@ interface INavLinkProps {
 
 const NavLink = (props: INavLinkProps) => (
   <Link
-    className="link grow dim black b f5 f4-l dib mr3 mr4-l"
+    className="navLinks"
     to={props.to}
     title={props.label}
   >

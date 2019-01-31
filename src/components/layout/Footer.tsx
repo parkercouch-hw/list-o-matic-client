@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <footer className="footer">
         <span className="footer-text">
-          Created by Parker Couch &copy; {new Date().getFullYear()}
+          Created by Doug, Parker, & Tamis &copy; {new Date().getFullYear()}
         </span>
       </footer>
     </div>

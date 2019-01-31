@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
+import List from './components/List';
 
 class Profile extends Component<any, any> {
   public render() {
     if(this.props.user) {
+      const list = () => {
+        return <List 
+          // name={name} 
+          // key={index} 
+          />
+      }
+
       return (
           <div>
             <h2>Hello again, {this.props.user.name}!</h2>
             <h4>Your email is {this.props.user.email}</h4>
+              <div className="list">
+                  <h3>Name of users List(s)</h3>
+                    {list}
+              </div>
+
+          
           </div>
         );
     }

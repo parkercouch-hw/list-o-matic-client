@@ -6,11 +6,6 @@ import { SERVER_URL } from '../../constants/server';
 
 import { IAuth, IUser } from '../../Types';
 
-// export interface ISignUpProps {
-//   user: IUser;
-//   updateUser: () => void;
-// }
-
 // IAuth
 // user: IUser
 // updateUser: function

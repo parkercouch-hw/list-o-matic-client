@@ -12,7 +12,6 @@ export interface IDetailedListState {
   newItem: string;
 }
 
-
 export default class DetailedList extends React.Component<any, any> {
   public readonly state: IDetailedListState = {
     newItem: '',
@@ -20,7 +19,10 @@ export default class DetailedList extends React.Component<any, any> {
 
   public render() {
     const items = this.props.location.state.items.map((item: any) => (
-      <li key={item._id}>
+      <li
+        key={item._id}
+        className={item.completed ? 'strike' : ''}
+      >
         {item.content}
       </li>
     ));
@@ -65,5 +67,8 @@ export default class DetailedList extends React.Component<any, any> {
         console.log(error.response.data.message);
       }
     }
+    return this.setState({
+      newItem: '',
+    });
   }
 }

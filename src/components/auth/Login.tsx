@@ -23,7 +23,7 @@ class Login extends Component<IAuth, ILoginState> {
     }
     return(
         <div>
-          <h2>Login as an existing user</h2>
+          <h2>Log In</h2>
           <form onSubmit={this.handleSubmit}>
             <div>
               <input

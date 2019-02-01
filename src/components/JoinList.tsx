@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { SERVER_URL } from '../constants/server';
 import { IList } from '../Types';
@@ -47,6 +48,10 @@ export default class JoinList extends React.Component<IJoinListProps, IJoinListS
   }
 
   public render() {
+    if (!this.props.user) {
+      return (<Redirect to="/login" />);
+    }
+
     const display = this.state.list
       ?
         <div>

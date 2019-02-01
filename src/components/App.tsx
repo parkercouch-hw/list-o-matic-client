@@ -6,6 +6,7 @@ import { SERVER_URL } from '../constants/server';
 
 import Login from './auth/Login';
 import Signup from './auth/Signup';
+import DetailedList from './DetailedList';
 import Header from './header/Header';
 import Home from './Home';
 import JoinList from './JoinList';
@@ -125,6 +126,15 @@ class App extends React.Component<any, IAppState> {
             component={() => (
               <JoinList
                 user={this.state.user}
+              />
+            )}
+          />
+
+          <Route path="/details"
+            component={({ location }: any) => (
+              <DetailedList
+                user={this.state.user}
+                location={location}
               />
             )}
           />

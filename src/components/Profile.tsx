@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component<any, any> {
 
   public render() {
     if (this.props.user) {
-      const listOfLists = this.props.lists.map((list: any) => (
-        <p
+      const listOfLists = this.props.lists.map((list: any) => {
+        const location = {
+          pathname: '/details',
+          state: list,
+        };
+        return <Link
+          to={location}
           key={list._id}
           className="grow pointer"
-        >{list.name}</p>
-      ));
+        >{list.name}</Link>;
+      });
 
       return (
         <div>

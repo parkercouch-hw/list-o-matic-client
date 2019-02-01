@@ -19,8 +19,7 @@ button, .button {
 }
 
 button:hover {
-  background-color: #E9EECF;
-  color: gray;
+  background-color: #69B578;
 }
 
 a, p, li, ul {
@@ -60,6 +59,11 @@ input {
 	margin-right: 20px;
 }
 
+.navLinks:hover {
+  color: #69B578;
+}
+
+
 .profileListItems {
   display: block;
   font-size: 14px;
@@ -69,7 +73,7 @@ input {
   color: black;
 }
 .profileListItems:hover {
-  color: gray;
+  color: #69B578;
 }
 
 .footer {

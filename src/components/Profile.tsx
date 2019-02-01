@@ -19,10 +19,9 @@ class Profile extends Component<any, any> {
 
       return (
         <div>
-          <h2>Hello, {this.props.user.name}!</h2>
+          <h2>{this.props.user.name}&rsquo;s lists:</h2>
           <div className="list">
-            <h3>Your list(s):</h3>
-            <button onClick={this.props.getLists}>Get Lists</button><br/><br/>
+            <button onClick={this.props.getLists}>Get My Lists!</button><br/><br/>
             {listOfLists}
           </div>
         </div>

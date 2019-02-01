@@ -10,14 +10,17 @@ import Header from './header/Header';
 import Home from './Home';
 import Footer from './layout/Footer';
 import Profile from './Profile';
+import { IList, IUser } from '../Types';
 
 export interface IAppState {
   user: any;
+  usersLists: any;
 }
 
 class App extends React.Component<any, IAppState> {
   public readonly state: IAppState = {
     user: null,
+    usersLists: [],
   };
 
   public componentDidMount = () => {
@@ -45,6 +48,36 @@ class App extends React.Component<any, IAppState> {
       console.log('No token');
       this.setState({
         user: null,
+      });
+    }
+  }
+
+  public getAllLists = () => {
+    const token = localStorage.getItem('serverToken');
+    if (token) {
+      console.log('Found token', token);
+      axios.post(`${SERVER_URL}/lists`, {
+        headers: { Authorization: `Bearer ${token}`},
+        body: {
+          userId: this.state.user.id,
+        }
+      })
+        .then((response) => {
+          console.log('Success');
+          console.log(response);
+          this.setState({
+            usersLists: response.data,
+          });
+        })
+        .catch((error) => {
+          console.log('Error looking up user by token', error, error.response);
+          this.setState({ usersLists: null });
+        });
+    } else {
+      console.log('No token');
+      this.setState({
+        user: null,
+        usersLists: null,
       });
     }
   }
@@ -81,6 +114,8 @@ class App extends React.Component<any, IAppState> {
             component={() => (
               <Profile
                 user={this.state.user}
+                getLists={this.getAllLists}
+                lists={this.state.usersLists}
               />
             )}
           />

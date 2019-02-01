@@ -13,7 +13,7 @@ class Profile extends Component<any, any> {
         return <Link
           to={location}
           key={list._id}
-          className="grow pointer"
+          className="profileListItems"
         >{list.name}</Link>;
       });
 
@@ -22,7 +22,7 @@ class Profile extends Component<any, any> {
           <h2>Hello, {this.props.user.name}!</h2>
           <div className="list">
             <h3>Your list(s):</h3>
-            <button onClick={this.props.getLists}>Get Lists</button>
+            <button onClick={this.props.getLists}>Get Lists</button><br/><br/>
             {listOfLists}
           </div>
         </div>

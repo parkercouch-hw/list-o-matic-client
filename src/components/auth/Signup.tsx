@@ -75,7 +75,6 @@ class Signup extends Component<IAuth, ISignUpState> {
     e.preventDefault();
     try {
       const response = await axios.post(`${SERVER_URL}/auth/signup`, this.state);
-      console.log('POST signup SUCCESS', response);
       localStorage.setItem('serverToken', response.data.token);
       this.props.updateUser();
     } catch (error) {

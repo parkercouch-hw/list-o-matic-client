@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
-import { any } from 'prop-types';
-
-class Home extends Component<any, any> {
-  public render() {
-    return(
-        <p>This is a home page. You should probably write something here.</p>
-      );
-  }
-}
+const Home = () => (
+  <div>
+    <h1>Welcome to List-O-Matic</h1>
+    <h3>Create and share lists with anyone!</h3>
+  </div>
+);
 
 export default Home;

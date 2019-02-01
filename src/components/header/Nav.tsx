@@ -18,8 +18,7 @@ class Nav extends Component<IAuth, any> {
 
     return(
       <nav className="nav">
-      <span className="logoType">List-O-Matic</span>
-        <NavLink to="/" label="Home" />
+        <Link to="/" className="logoType no-underline" title="List-O-Matic">List-O-Matic</Link>
         {links}
       </nav>
     );

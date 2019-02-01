@@ -58,9 +58,7 @@ class App extends React.Component<any, IAppState> {
       console.log('Found token', token);
       axios.post(`${SERVER_URL}/lists`, {
         headers: { Authorization: `Bearer ${token}`},
-        body: {
-          userId: this.state.user.id,
-        }
+        userId: this.state.user.id,
       })
         .then((response) => {
           console.log('Success');
@@ -70,14 +68,14 @@ class App extends React.Component<any, IAppState> {
           });
         })
         .catch((error) => {
-          console.log('Error looking up user by token', error, error.response);
-          this.setState({ usersLists: null });
+          console.log('Get List Failed', error, error.response);
+          this.setState({ usersLists: [] });
         });
     } else {
       console.log('No token');
       this.setState({
         user: null,
-        usersLists: null,
+        usersLists: [],
       });
     }
   }

@@ -9,12 +9,37 @@ body {
   background-color: #F8F4E3;
 }
 
+button, .button {
+  background-color: #D0DB97;
+  color: black;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  margin: 9px 0 !important;
+  padding: 3px 6px 3px 6px !important;
+}
+
+button:hover {
+  background-color: #E9EECF;
+  color: gray;
+}
+
+input {
+  background-color: #FDFDF9;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  margin: 3px !important;
+}
+
 .App {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   max-width: 700px;
   margin: 0 auto;
   text-align: left;
+}
+
+.nav {
+  border-bottom: 3px solid #D0DB97;
 }
 
 .navLinks {
@@ -26,6 +51,19 @@ body {
 	margin-left: 20px;
 	margin-right: 20px;
 }
+
+.profileListItems {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  color: black;
+}
+.profileListItems:hover {
+  color: gray;
+}
+
 
 .footer {
 	position: absolute;
